@@ -684,7 +684,7 @@ void VDBMap::get_slice_marker(VisMarker &marker, int marker_id, double slice, do
             Coord nearest_obst;
             auto cell_dist = grid_distance_->query_sq_distance(target_cell, nearest_obst);
 
-            if (cell_dist < 0 || cell_dist >= max_coor_dist_){ // unknown cells
+            if (cell_dist < 0 || cell_dist >= max_coor_sqdist_){ // unknown cells
                 continue;
             }
             auto world_xyz = dist_map_->indexToWorld(target_cell);
